@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title></title>
+  </head>
+  <body>
+    <div id="root">
+      <header>
+        <!-- <img src="" alt=""> -->
+        <input type="search" v-model="queryInput" placeholder="Cerca per parola chiave">
+        <button type="button" name="button" @click="ricerca">Cerca</button>
+      </header>
+      <div class="container" >
+        <div class="item-container" v-for="film in libreria">
+            <!-- <img :src="" alt=""> -->
+            <h3 class="style-title">{{film.title}}</h3>
+            <h4 class="style-text">{{film.original_title}}</h4>
+            <span class="style-text">{{film.original_language}}</span>
+            <span class="style-text">{{film.vote_average}}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- javascript -->
+    <script type="text/javascript" src="js/script.js">
+    </script>
+
+  </body>
+</html>
