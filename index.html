@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -10,17 +11,45 @@
   <body>
     <div id="root">
       <header>
-        <!-- <img src="" alt=""> -->
+        <div class="logo">
+          BOOLFLIX
+        </div>
         <input type="search" v-model="queryInput" placeholder="Cerca per parola chiave">
         <button type="button" name="button" @click="ricerca">Cerca</button>
       </header>
       <div class="container" >
-        <div class="item-container" v-for="film in libreria">
+        <div class="item-container" v-for="film in libreriaMovie">
             <!-- <img :src="" alt=""> -->
             <h3 class="style-title">{{film.title}}</h3>
             <h4 class="style-text">{{film.original_title}}</h4>
             <span class="style-text">{{film.original_language}}</span>
-            <span class="style-text">{{film.vote_average}}</span>
+            <div class="flag">
+              <span></span>
+            </div>
+            <!-- <span class="style-text">{{film.vote_average}}</span> -->
+            <div class="">
+              <i class="fas fa-star" :class="{'starating' : film.vote_average >= 1}"></i>
+              <i class="fas fa-star" :class="{'starating' : film.vote_average >= 3}"></i>
+              <i class="fas fa-star" :class="{'starating' : film.vote_average >= 5}"></i>
+              <i class="fas fa-star" :class="{'starating' : film.vote_average >= 7}"></i>
+              <i class="fas fa-star" :class="{'starating' : film.vote_average >= 9}"></i>
+            </div>
+        </div>
+      </div>
+      <div class="container" >
+        <div class="item-container" v-for="serie in libreriaSerie">
+            <!-- <img :src="" alt=""> -->
+            <h3 class="style-title">{{serie.name}}</h3>
+            <h4 class="style-text">{{serie.original_name}}</h4>
+            <span class="style-text">{{serie.original_language}}</span>
+            <!-- <span class="style-text">{{serie.vote_average}}</span> -->
+            <div class="">
+              <i class="fas fa-star" :class="{'starating' : serie.vote_average >= 1}"></i>
+              <i class="fas fa-star" :class="{'starating' : serie.vote_average >= 3}"></i>
+              <i class="fas fa-star" :class="{'starating' : serie.vote_average >= 5}"></i>
+              <i class="fas fa-star" :class="{'starating' : serie.vote_average >= 7}"></i>
+              <i class="fas fa-star" :class="{'starating' : serie.vote_average >= 9}"></i>
+            </div>
         </div>
       </div>
     </div>

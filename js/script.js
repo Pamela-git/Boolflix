@@ -5,19 +5,34 @@ var app = new Vue({
   data: {
     // apiKey: "54a6d59873b14d17cd7ea35eed688e38",
     queryInput: "",
-    libreria: []
+    libreriaMovie: [],
+    libreriaSerie: []
   },
   methods: {
     ricerca: function() {
       // let search = this.queryInput;
       axios.get("https://api.themoviedb.org/3/search/movie?api_key=54a6d59873b14d17cd7ea35eed688e38&query=" + this.queryInput)
       .then(risposta => {
-        let movie = risposta.data.results;
-        console.log(movie);
-        this.libreria = movie;
+        var movie = risposta.data.results;
         // console.log(this.libreria);
+        this.libreriaMovie = movie
 
       });
+
+      axios.get("https://api.themoviedb.org/3/search/tv?api_key=e99307154c6dfb0b4750f6603256716d&query=" + this.queryInput)
+      .then(result => {
+        var serie = result.data.results;
+        // console.log(this.libreria);
+        this.libreriaSerie = serie;
+      });
+
+      this.queryInput = "";
+
+      // this.libreria = movie + serie;
+      // console.log(this.libreria);
+
+
+
     }
   }
 

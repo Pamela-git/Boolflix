@@ -23,7 +23,7 @@ header > img {
   justify-content: center;
   width: 60%;
   margin: 0 auto;
-  padding: 3% 0;
+  padding: 0 0;
 }
 .item-container {
   width: 20%;
@@ -43,4 +43,13 @@ header > img {
 
 .style-text {
   color: rgb(107, 110, 113);
+  display: block;
+}
+
+.fa-star {
+  color: rgb(107, 110, 113);
+}
+
+.starating {
+  color: yellow;
 }
