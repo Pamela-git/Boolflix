@@ -3,7 +3,10 @@
 var app = new Vue({
   el: "#root",
   data: {
-    // apiKey: "54a6d59873b14d17cd7ea35eed688e38",
+    active: true,
+    hide: false,
+    showIntro: true,
+    posizione: 0,
     queryInput: "",
     libreriaMovie: [],
     libreriaSerie: [],
@@ -15,7 +18,8 @@ var app = new Vue({
       .then(risposta => {
         var movie = risposta.data.results;
         // console.log(this.libreria);
-        this.libreriaMovie = movie
+        this.libreriaMovie = movie;
+        this.showIntro = false;
 
       });
 
@@ -27,13 +31,7 @@ var app = new Vue({
       });
 
       this.queryInput = "";
-
-      // this.libreria = movie + serie;
-      // console.log(this.libreria);
-
-
-
-    }
+    },
   }
 
 });
