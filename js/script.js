@@ -6,7 +6,7 @@ var app = new Vue({
     // apiKey: "54a6d59873b14d17cd7ea35eed688e38",
     queryInput: "",
     libreriaMovie: [],
-    libreriaSerie: []
+    libreriaSerie: [],
   },
   methods: {
     ricerca: function() {
