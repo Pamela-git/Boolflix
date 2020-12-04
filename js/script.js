@@ -10,20 +10,29 @@ var app = new Vue({
     urlImg: 'https://image.tmdb.org/t/p/w342', //url fissa immagini
     queryInput: "", //input utente
     libreriaMovie: [], //arrayfilm
-    libreriaSerie: [] //arrayserie
+    libreriaSerie: [],       //arrayserie
+    listaGeneri: []
   },
+  // mounted: function() {
+  //   axios.get("https://api.themoviedb.org/3/genre/movie/list?api_key=54a6d59873b14d17cd7ea35eed688e38")
+  //   .then(risposta => {
+  //     let genere = risposta.data.genres;
+  //     this.listaGeneri = genere;
+  //     console.log(this.listaGeneri);
+  //   });
+  // },
   methods: {
     //chiamata film con input utente
     ricerca: function() {
       axios.get(urlMovie + apiKey + this.queryInput)
       .then(risposta => {
-        var movie = risposta.data.results;
+        let movie = risposta.data.results;
         this.libreriaMovie = movie;
       });
       // chiamata serie con input utente
       axios.get(urlSerie + apiKey + this.queryInput)
       .then(result => {
-        var serie = result.data.results;
+        let serie = result.data.results;
         this.libreriaSerie = serie;
 
       });
