@@ -1,15 +1,18 @@
+/* regole generali */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* regole blocco Vue */
 #root {
   background-color: black;
   min-height: 100vh;
   font-family: 'Lato', sans-serif;
 }
 
+/* regole header generali */
 header {
   background-color: rgb(46, 58, 70);
   height: 50px;
@@ -18,20 +21,31 @@ header {
   align-items: center;
 }
 
-.logo {
-  font-size: 40px;
-  color: red;
-}
+/* regole item header */
 .header-flex {
   width: 40%;
 }
 
+
+/* regole per logo  */
+.logo {
+  font-size: 40px;
+  color: red;
+}
+
+/* regole per  blocco input */
 .search-input {
   text-align: right;
 }
+
+/* regole barra ricerca */
 #style-input {
   width: 60%;
+  height: 30px;
+  border: 2px solid black;
 }
+
+/* blocco contenitore card */
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -40,11 +54,14 @@ header {
   padding: 0 0;
 }
 
+/* regole titolo introduttivo */
 .intro {
   color: red;
   text-align: center;
   width: 100%;
 }
+
+/* regole cards */
 .item-container {
   width: 30%;
   height: 400px;
@@ -52,9 +69,24 @@ header {
   padding: 10px 10px;
   background-color: rgb(46, 58, 70);
   border: 2px solid white;
-
 }
 
+.item-container:hover {
+  opacity: 0.6;
+}
+
+
+.resizeimg {
+  position: relative;
+  height: 90%;
+}
+
+.resizeimg > img {
+  width: 100%;
+  height: 100%;
+}
+
+/* blocco informazioni film/serie */
 .display-info {
   display: none;
   position: absolute;
@@ -67,28 +99,8 @@ header {
   color: white;
 }
 
-.overflow {
-  overflow: auto;
-  max-height: 30%;
-  margin: 10px 0;
-}
-
-.item-container:hover {
-  opacity: 0.6;
-}
-
 .item-container:hover .display-info {
   display: block;
-}
-
-.resizeimg {
-  position: relative;
-  height: 90%;
-}
-
-.resizeimg > img {
-  width: 100%;
-  height: 100%;
 }
 
 .style-title {
@@ -96,11 +108,18 @@ header {
 }
 
 .style-text {
-  /* color: white; */
   display: block;
   text-transform: capitalize;
 }
 
+/* blocco per overview */
+.overflow {
+  overflow: auto;
+  max-height: 30%;
+  margin: 10px 0;
+}
+
+/* regole stelle */
 .fa-star {
   color: rgb(107, 110, 113);
 }
@@ -113,6 +132,7 @@ header {
   margin: 10px 0;
 }
 
+/* bandiere */
 .flag > img {
   width: 30px;
 }

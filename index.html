@@ -12,34 +12,46 @@
     <title></title>
   </head>
   <body>
+    <!-- inizio blocco Vue -->
     <div id="root">
+      <!-- header -->
       <header>
         <div class="logo header-flex">
           BOOLFLIX
         </div>
+        <!-- blocco ricerca -->
         <div class="search-input header-flex" >
           <input id="style-input" type="search" v-model="queryInput" placeholder="Cerca per parola chiave" v-on:keyup.enter="ricerca">
           <!-- <button type="button" name="button" @click="ricerca">Cerca</button> -->
         </div>
-
       </header>
+      <!-- fine header -->
+
+      <!-- inizio blocco contenitore card -->
       <div class="container" >
+        <!-- titolo intro -->
         <div class="intro">
           <h1 v-show="showIntro">Tanti Film e Serie TV!</h1>
         </div>
+
+        <!-- blocco cards -->
         <div class="item-container" v-for="film in libreriaMovie">
+          <!-- blocco poster -->
           <div class="resizeimg">
             <img v-if="film.poster_path" :src="urlImg + film.poster_path" alt="Copertina" class="resize-img">
             <img v-else src="img/notfound.jpg" alt="notfound">
             <h5 class="style-title">Titolo: {{film.title}}</h5>
+            <!-- blocco dettagli film -->
             <div class="display-info">
                 <h3 class="style-title"> Titolo: {{film.title}}</h3>
                 <h4 class="style-text"> Titolo originale: {{film.original_title}}</h4>
                 <p class="overflow"> Trama: {{film.overview}}</p>
+                <!-- bandiere -->
                 <div class="flag">
                   <img  alt="country-flag"  v-if="film.original_language" :src="'img/' + film.original_language + '.svg'">
                   <span class="style-text" v-else> Lingua: {{film.original_language}}</span>
                 </div>
+                <!-- rating stars -->
                 <div class="stars"> Voto:
                     <i class="fas fa-star" :class="{'starating' : film.vote_average >= 1}"></i>
                     <i class="fas fa-star" :class="{'starating' : film.vote_average >= 3}"></i>
@@ -48,21 +60,28 @@
                     <i class="fas fa-star" :class="{'starating' : film.vote_average >= 9}"></i>
                 </div>
             </div>
-          </div>
-        </div>
+            <!-- fine blocco info -->
+          </div>   <!-- fine blocco poster+dettagli -->
+        </div> <!-- fine blocco cards film -->
+
+        <!-- inizio blocco cards serie -->
         <div class="item-container" v-for="serie in libreriaSerie">
+          <!-- blocco poster+dettagli -->
           <div class="resizeimg">
             <img v-if="serie.poster_path" :src="urlImg + serie.poster_path" alt="Copertina">
             <img v-else src="img/notfound.jpg" alt="notfound">
             <h5 class="style-title">Titolo: {{serie.name}}</h5>
+            <!-- dettagli -->
             <div class="display-info">
               <h3 class="style-title"> Titolo: {{serie.name}}</h3>
               <h4 class="style-text"> Titolo originale: {{serie.original_name}}</h4>
               <p class="overflow"> Trama: {{serie.overview}}</p>
+              <!-- bandiere -->
               <div class="flag">
                   <img  alt="country-flag"  v-if="serie.original_language" :src="'img/' + serie.original_language + '.svg'">
                   <span class="style-text" v-else> Lingua: {{serie.original_language}}</span>
               </div>
+              <!-- rating stars -->
               <div class="stars"> Voto:
                 <i class="fas fa-star" :class="{'starating' : serie.vote_average >= 1}"></i>
                 <i class="fas fa-star" :class="{'starating' : serie.vote_average >= 3}"></i>
@@ -70,11 +89,14 @@
                 <i class="fas fa-star" :class="{'starating' : serie.vote_average >= 7}"></i>
                 <i class="fas fa-star" :class="{'starating' : serie.vote_average >= 9}"></i>
               </div>
-            </div>
-          </div>
+            </div> <!-- fine blocco dettagli -->
+          </div> <!-- fine blocco poster+dettagli -->
         </div>
+         <!-- fine blocco cards serie-->
       </div>
+      <!-- fine blocco cards-->
     </div>
+    <!-- fine blocco Vue -->
 
     <!-- javascript -->
     <script type="text/javascript" src="js/script.js">
