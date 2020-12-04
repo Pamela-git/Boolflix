@@ -64,7 +64,7 @@ header {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0.8);
-  color: white
+  color: white;
 }
 
 .overflow {
@@ -96,7 +96,7 @@ header {
 }
 
 .style-text {
-  color: white;
+  /* color: white; */
   display: block;
   text-transform: capitalize;
 }
@@ -115,4 +115,22 @@ header {
 
 .flag > img {
   width: 30px;
+}
+
+/* scrollbar */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 10px;
 }
