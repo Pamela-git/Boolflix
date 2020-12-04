@@ -12,9 +12,7 @@ var app = new Vue({
     urlImg: 'https://image.tmdb.org/t/p/w342',
     queryInput: "",
     libreriaMovie: [],
-    libreriaSerie: [],
-    bandiere: [],
-    lingue: []
+    libreriaSerie: []
   },
   methods: {
     ricerca: function() {
