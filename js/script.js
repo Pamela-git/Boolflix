@@ -2,25 +2,19 @@
 const urlMovie = "https://api.themoviedb.org/3/search/movie?";
 const urlSerie = "https://api.themoviedb.org/3/search/tv?";
 const apiKey = "api_key=54a6d59873b14d17cd7ea35eed688e38&query=";
+// const multiSearch = "https://api.themoviedb.org/3/search/multi?"
 
 var app = new Vue({
   el: "#root",
   data: {
+    star: "starating",
     showIntro: true, //show titolo intro
     urlImg: 'https://image.tmdb.org/t/p/w342', //url fissa immagini
     queryInput: "", //input utente
     libreriaMovie: [], //arrayfilm
-    libreriaSerie: [],       //arrayserie
-    listaGeneri: []
+    libreriaSerie: []  //arrayserie
+
   },
-  // mounted: function() {
-  //   axios.get("https://api.themoviedb.org/3/genre/movie/list?api_key=54a6d59873b14d17cd7ea35eed688e38")
-  //   .then(risposta => {
-  //     let genere = risposta.data.genres;
-  //     this.listaGeneri = genere;
-  //     console.log(this.listaGeneri);
-  //   });
-  // },
   methods: {
     //chiamata film con input utente
     ricerca: function() {
