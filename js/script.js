@@ -13,7 +13,6 @@ var app = new Vue({
     queryInput: "", //input utente
     libreriaMovie: [], //arrayfilm
     libreriaSerie: []  //arrayserie
-
   },
   methods: {
     //chiamata film con input utente
@@ -34,7 +33,9 @@ var app = new Vue({
       this.showIntro = false;
       // azzerare barra ricerca
       this.queryInput = "";
+
     },
+
   }
 
 });

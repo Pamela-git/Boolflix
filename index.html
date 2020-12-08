@@ -54,11 +54,7 @@
                 </div>
                 <!-- rating stars -->
                 <div class="stars"> Voto:
-                    <i class="fas fa-star" :class="{'starating' : film.vote_average >= 1}"></i>
-                    <i class="fas fa-star" :class="{'starating' : film.vote_average >= 3}"></i>
-                    <i class="fas fa-star" :class="{'starating' : film.vote_average >= 5}"></i>
-                    <i class="fas fa-star" :class="{'starating' : film.vote_average >= 7}"></i>
-                    <i class="fas fa-star" :class="{'starating' : film.vote_average >= 9}"></i>
+                  <i class="fas fa-star" v-for="voto in 5" :class="Math.ceil(film.vote_average / 2) >= voto ? 'starating' : ''"></i>
                 </div>
             </div>
             <!-- fine blocco info -->
@@ -85,11 +81,7 @@
               </div>
               <!-- rating stars -->
               <div class="stars" > Voto:
-                <i class="fas fa-star" :class="{'starating' : serie.vote_average >= 1}"></i>
-                <i class="fas fa-star" :class="{'starating' : serie.vote_average >= 3}"></i>
-                <i class="fas fa-star" :class="{'starating' : serie.vote_average >= 5}"></i>
-                <i class="fas fa-star" :class="{'starating' : serie.vote_average >= 7}"></i>
-                <i class="fas fa-star" :class="{'starating' : serie.vote_average >= 9}"></i>
+                <i class="fas fa-star" v-for="voto in 5" :class="Math.ceil(serie.vote_average / 2) >= voto ? 'starating' : ''"></i>
               </div>
             </div> <!-- fine blocco dettagli -->
           </div> <!-- fine blocco poster+dettagli -->
