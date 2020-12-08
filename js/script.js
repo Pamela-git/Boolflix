@@ -2,7 +2,8 @@
 const urlMovie = "https://api.themoviedb.org/3/search/movie?";
 const urlSerie = "https://api.themoviedb.org/3/search/tv?";
 const apiKey = "api_key=54a6d59873b14d17cd7ea35eed688e38&query=";
-// const multiSearch = "https://api.themoviedb.org/3/search/multi?"
+const filmPopolari = "https://api.themoviedb.org/3/movie/popular?";
+const seriePopolari = "https://api.themoviedb.org/3/tv/popular?";
 
 var app = new Vue({
   el: "#root",
@@ -12,7 +13,23 @@ var app = new Vue({
     urlImg: 'https://image.tmdb.org/t/p/w342', //url fissa immagini
     queryInput: "", //input utente
     libreriaMovie: [], //arrayfilm
-    libreriaSerie: []  //arrayserie
+    libreriaSerie: [],  //arrayserie
+  },
+  // chiamate per serie tv e film popolari
+  mounted: function() {
+    axios.get(filmPopolari + apiKey)
+    .then(risposta => {
+      let popularFilm = risposta.data.results;
+      this.libreriaMovie = popularFilm;
+    });
+
+    axios.get(seriePopolari + apiKey)
+    .then(risposta => {
+      let popularSerie = risposta.data.results;
+      this.libreriaSerie = popularSerie;
+    });
+
+
   },
   methods: {
     //chiamata film con input utente

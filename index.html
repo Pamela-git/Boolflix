@@ -29,12 +29,10 @@
 
       <!-- inizio blocco contenitore card -->
       <div class="container" >
-        <!-- titolo intro -->
-        <div class="intro">
-          <h1 v-show="showIntro">Tanti Film e Serie TV!</h1>
+        <!-- blocco Film -->
+        <div class="intro" v-show="showIntro">
+          <h1 >Film Popolari</h1>
         </div>
-
-        <!-- blocco cards -->
         <div class="item-container" v-for="film in libreriaMovie">
           <!-- blocco poster -->
           <div class="resizeimg">
@@ -61,6 +59,10 @@
           </div>   <!-- fine blocco poster+dettagli -->
         </div> <!-- fine blocco cards film -->
 
+        <!-- Blocco serie -->
+        <div class="intro" v-show="showIntro">
+          <h1 >SerieTv Popolari</h1>
+        </div>
         <!-- inizio blocco cards serie -->
         <div class="item-container" v-for="serie in libreriaSerie">
           <!-- blocco poster+dettagli -->
@@ -86,7 +88,6 @@
             </div> <!-- fine blocco dettagli -->
           </div> <!-- fine blocco poster+dettagli -->
         </div>
-         <!-- fine blocco cards serie-->
       </div>
       <!-- fine blocco cards-->
     </div>
